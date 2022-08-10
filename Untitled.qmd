@@ -1,0 +1,96 @@
+---
+title: "Untitled1"
+format: html
+editor: visual
+execute: 
+  warning: false
+  error: false
+  echo: true
+---
+
+```{r}
+
+library(tidyverse)
+
+```
+
+
+### `if` Statements
+
+```{r}
+burrito <- 2.1
+
+if (burrito > 2) {
+  print("I love burritos!")
+}
+```
+
+
+```{r}
+my_ships <- c("Millenium Falcon", "X-wing", "Tie-Fighter", "Death Star")
+
+str_detect(my_ships, pattern = "r")
+
+phrase <- "I hate burritos"
+
+if (str_detect(phrase, "hate")) {
+  print("I am NOT a burrito fan.")
+} else if (str_detect(phrase, "love"))
+  print("I am a burrito fan.")
+```
+
+### `if-else` statement
+
+```{r}
+
+pika <- 50
+
+if (pika > 60) {
+  print("mega pika")
+} else {
+  print("normal pika")
+}
+
+```
+
+
+```{r}
+marmot <- 0.2
+
+if (marmot < 0.5) {
+  print("This is a small marmot")
+} else if (marmot >= 0.5 & marmot <3) {
+  print("This is a medium marmot")
+} else {
+  print("This is a large marmot")
+}
+
+
+```
+
+
+
+
+```{r}
+
+tatooine_characters <- starwars%>% 
+  filter(homeworld == "Tatooine")
+
+# Use %in% operator to check for multiple positive matches
+
+tatooine_endor_naboo <- starwars %>% 
+  filter(homeworld == "Tatooine" | homeworld == "Naboo" | homeworld == "Endor")
+
+# %in% operator can do the above in less code
+
+tatooine_endor_naboo <- starwars %>% 
+  filter(homeworld %in% c("Tatooine", "Naboo", "Endor"))
+
+# In words, this asks, does the value in the homeworld variable for that row exist IN that vector c("Tatooine", "Naboo", "Endor")
+
+```
+
+
+
+
+
